@@ -12,7 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       newAccount: {
         name: "",
-        balance: 0
+        balance: 0,
+        // filterAmount: 0
+      }
+    },
+    computed: {
+      totalBalances: function(){
+        return this.accounts.reduce((runningTotal, account) => {
+          return runningTotal + account.balance;}, 0);
+      },
+      filteredAccounts: function(){
+        return this.accounts.filter((account) => {
+          return account.balance >= this.filterAmount;
+        });
       }
     },
     methods: {

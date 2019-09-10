@@ -12,7 +12,7 @@
   <div id="app">
     <header>
       <h1>Bank of CodeClan</h1>
-      <h2>Total deposits: £ </h2>
+      <h2>Total deposits: £ {{ totalBalances }}</h2>
       <p>Total Deposits ☝️ should update dynamically when we add a new account.</p>
     </header>
 
@@ -24,9 +24,13 @@
     </form>
 
     <section>
-      <div class="account" v-for="account in accounts">
+      <div class="account" v-for="account in filteredAccounts">
         <h2>{{ account.name }}</h2>
         <p>Balance: £{{ account.balance }}</p>
+      </div>
+      <div id="filterInput">
+        <h3>Filter Accounts By Minimum Value</h3>
+        <input type="number" v-model.number="filterAmount"/>
       </div>
     </section>
   </div>
