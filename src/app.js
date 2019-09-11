@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "",
         balance: 0,
         // filterAmount: 0
-      }
+      },
+      filterAmount: 0
     },
     computed: {
       totalBalances: function(){
